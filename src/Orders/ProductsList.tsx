@@ -21,9 +21,6 @@ import ProductCard from "./ProductCard";
 import { Product } from "./types";
 import productsData from "./Products.json"; // Importando o JSON local
 
-type Props = {
-  products: Product[];
-};
 
 export default function ProductsList() {
   // Utilizando os dados do JSON local em vez da API externa
