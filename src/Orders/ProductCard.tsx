@@ -1,16 +1,19 @@
-import pizza from "./pizza.png";
-export default function ProductCard() {
+import { Product } from "./types";
+
+type Props = {
+  product: Product;
+};
+
+export default function ProductCard({ product }: Props) {
   return (
     <div className="order-card-container">
-      <h3 className="order-card-title">Pizza Calabresa</h3>
-      <img className="order-card-image" src={pizza} />
-      <h3 className="order-card-price">R$ 35,90</h3>
+      <h3 className="order-card-title">{product.name}</h3>
+      <img className="order-card-image" src={product.imageUri} />
+      <h3 className="order-card-price">R${" "}{product.price}</h3>
       <div className="order-card-description">
         <h3>Descrição</h3>
         <p>
-          Uma deliciosa combinação de Linguiça Calabresa, rodelas de cebolas
-          frescas, azeitonas pretas, mussarela, polpa de tomate, orégano e massa
-          especial.
+        {product.description}
         </p>
       </div>
     </div>
