@@ -17,7 +17,6 @@
 //   );
 // }
 
-import React from "react";
 import ProductCard from "./ProductCard";
 import { Product } from "./types";
 import productsData from "./Products.json"; // Importando o JSON local
@@ -26,7 +25,7 @@ type Props = {
   products: Product[];
 };
 
-export default function ProductsList({ products }: Props) {
+export default function ProductsList() {
   // Utilizando os dados do JSON local em vez da API externa
   // products é a prop que você já estava passando para esse componente
   const localProducts = productsData;
