@@ -20,7 +20,7 @@ export default function Orders() {
     <div className="orders-container">
       <StepsHeader />
       <ProductsList 
-        
+        products={products}
       />
     </div>
   );

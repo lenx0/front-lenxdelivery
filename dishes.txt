@@ -1,0 +1,87 @@
+[
+  {
+    "code": 1,
+    "name": "Macarrão espaguete",
+    "price": 25.99,
+    "description": "Delicioso macarrão acompanhado com lagostas e tempero especial da casa.",
+    "imageUri": "https://iili.io/HZ1DSNp.png"
+  },
+  {
+    "code": 2,
+    "name": "Caviar Damaram",
+    "price": 318.99,
+    "description": "Caviar preparado com um toque de pimenta vermelha, menta e limão, receita especial suéca",
+    "imageUri": "https://iili.io/HZ1DrxI.png"
+  },
+  {
+    "code": 3,
+    "name": "Picanha com mandioca",
+    "price": 55.99,
+    "description": "Picanha assada com mandioca cozida, acompanha tomate, vegetais, molho madero e farofa crocante",
+    "imageUri": "https://iili.io/HZ1DeUJ.png"
+  },
+  {
+    "code": 4,
+    "name": "Frango com salada",
+    "price": 33.99,
+    "description": "Coxa de frango assado com alface, tomate e um acompanhamento à escolha",
+    "imageUri": "https://iili.io/HZ1DjiF.png"
+  },
+  {
+    "code": 5,
+    "name": "Peixe com creme",
+    "price": 48.99,
+    "description": "Corvina com creme de milho saboroso, acompanha massa italiana com queijo",
+    "imageUri": "https://iili.io/HZ1DXoP.png"
+  },
+  {
+    "_id": "64c6f51372bb6708482978e1",
+    "code": 6,
+    "name": "Cordeiro",
+    "price": 48.99,
+    "description": "Paleta de cordeiro ao molho do assado com purê de batata doce",
+    "imageUri": "https://iili.io/HZ1DVDB.png"
+  },
+  {
+    "code": 7,
+    "name": "Filé de tilápia",
+    "price": 36.99,
+    "description": "Filé de tilápia à parmegiana com um acompanhamento à escolha",
+    "imageUri": "https://iili.io/HZ1DGAQ.png"
+  },
+  {
+    "code": 10,
+    "name": "Filé de frango",
+    "price": 31.99,
+    "description": "Filé de frango com batatas",
+    "imageUri": "https://iili.io/HZ1Dlcb.png"
+  },
+  {
+    "code": 8,
+    "name": "Risoto de picadinho",
+    "price": 36.99,
+    "description": "Risoto de picadinho de filé acompanhado com fung Dolce",
+    "imageUri": "https://iili.io/HZ1DMNV.png"
+  },
+  {
+    "code": 9,
+    "name": "Combo japonês",
+    "price": 66.99,
+    "description": "Sushi, Sashimi, Salmão e acompanhamentos",
+    "imageUri": "https://iili.io/HZ1DYPe.png"
+  },
+  {
+    "code": 11,
+    "name": "Maminha com batata",
+    "price": 77.99,
+    "description": "Maminha assada ao molho barbecue com batatinha salsa ",
+    "imageUri": "https://iili.io/HZ1DcKu.png"
+  },
+  {
+    "code": 12,
+    "name": "Macarrão à bolonhesa",
+    "price": 29.99,
+    "description": "Tradicional macarrão à bolonhesa italiano",
+    "imageUri": "https://iili.io/HZ1D5o7.png"
+  }
+]
