@@ -1,13 +1,14 @@
 import { Drawer, Typography, Box } from "@mui/material";
-
+import CartLoot from "../CartCard";
+import CartHeader from "../Cart/Header"
 interface CartProps {
   openDrawer: boolean;
   onClose: () => void;
 }
 
 export default function Cart({ openDrawer, onClose }: CartProps) {
-  const drawerWidth = 450;
-  const drawerHeight = 700;
+  const drawerWidth = 700;
+  const drawerHeight = "100vh";
   return (
     <Drawer
       anchor="right"
@@ -15,9 +16,8 @@ export default function Cart({ openDrawer, onClose }: CartProps) {
       onClose={onClose}
       PaperProps={{ style: { width: drawerWidth, height: drawerHeight } }}
     >
-      <Box style={{ padding: '20px' }}>
-        <Typography>Pedido Nº</Typography>
-      </Box>
+      <CartHeader />
+      <CartLoot />
     </Drawer>
   );
 }
