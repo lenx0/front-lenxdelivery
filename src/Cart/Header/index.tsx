@@ -13,7 +13,7 @@ export default function CartHeader() {
         padding: "0 20px"
       }}
     >
-      <Typography style={{ fontSize: "24px", fontWeight: "bold" }}>
+      <Typography style={{ fontSize: "24px", fontWeight: "bold", color: 'white' }}>
         Carrinho
       </Typography>
       <Box
@@ -22,7 +22,7 @@ export default function CartHeader() {
           alignItems: "center"
         }}
       >
-        <Typography style={{ fontSize: "24px", fontWeight: "bold", marginRight: "10px" }}>
+        <Typography style={{ fontSize: "24px", fontWeight: "bold", marginRight: "10px", color: 'white' }}>
           Total R$ 265,97
         </Typography>
         <FaRegTrashAlt
