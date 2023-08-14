@@ -1,5 +1,5 @@
-import { Box, Typography } from "@mui/material"
-import { FaRegTrashAlt } from "react-icons/fa"
+import { Box, Typography } from "@mui/material";
+import { FaRegTrashAlt } from "react-icons/fa";
 
 export default function CartHeader() {
   return (
@@ -10,19 +10,28 @@ export default function CartHeader() {
         display: "grid",
         gridTemplateColumns: "1fr auto",
         alignItems: "center",
-        padding: "0 20px"
+        padding: "0 20px",
       }}
     >
-      <Typography style={{ fontSize: "24px", fontWeight: "bold", color: 'white' }}>
+      <Typography
+        style={{ fontSize: "24px", fontWeight: "bold", color: "white" }}
+      >
         Carrinho
       </Typography>
       <Box
         style={{
           display: "flex",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
-        <Typography style={{ fontSize: "24px", fontWeight: "bold", marginRight: "10px", color: 'white' }}>
+        <Typography
+          style={{
+            fontSize: "24px",
+            fontWeight: "bold",
+            marginRight: "10px",
+            color: "white",
+          }}
+        >
           Total R$ 265,97
         </Typography>
         <FaRegTrashAlt
@@ -34,5 +43,5 @@ export default function CartHeader() {
         />
       </Box>
     </Box>
-  )
+  );
 }
