@@ -16,6 +16,8 @@ export default function Navbar() {
     setOpenDrawer(false);
   }
 
+
+  //teste
   return (
     <nav className="main-navbar">
       <img src={logo} alt="Logo do site" />
