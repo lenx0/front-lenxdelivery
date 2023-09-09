@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-
+import { toast } from "react-toastify";
 import "./styles.css";
 import StepsHeader from "./StepsHeader";
 import ProductsList from "./ProductsList";
 import { OrderLocationData, Product } from "./types";
-import { fetchProducts } from "../api";
+import { fetchProducts, saveOrder } from "../api";
 import OrderLocation from "./OrderLocation";
 import OrderSummary from "./OrderSummary";
 import Footer from "../Footer";
@@ -15,17 +15,19 @@ export default function Orders() {
   const [selectedProducts, setSelectedProducts] = useState<Product[]>([]);
   const [orderLocation, setOrderLocation] = useState<OrderLocationData>();
   const totalPrice = selectedProducts.reduce((sum, item) => {
-    return sum + item.price
-  }, 0)
+    return sum + item.price;
+  }, 0);
 
   useEffect(() => {
     fetchProducts()
       .then((response) => setProducts(response.data))
-      .catch((error) => console.log(error));
+      .catch(() => {
+        toast.warning("Erro ao listar produtos");
+      });
   }, []);
 
   const handleSelectProduct = (product: Product) => {
-    const isAlreadySelected = checkIsSelected(selectedProducts, product)
+    const isAlreadySelected = checkIsSelected(selectedProducts, product);
 
     if (isAlreadySelected) {
       const selected = selectedProducts.filter(
@@ -35,6 +37,23 @@ export default function Orders() {
     } else {
       setSelectedProducts((previous) => [...previous, product]);
     }
+  };
+
+  const handleSubmit = () => {
+    const productsIds = selectedProducts.map(({ code }) => ({ code }));
+    const payload = {
+      ...orderLocation!,
+      products: productsIds,
+    };
+
+    saveOrder(payload)
+      .then((response) => {
+        toast.error(`Pedido enviado com sucesso! Nº${response.data.code}`);
+        setSelectedProducts([]);
+      })
+      .catch(() => {
+        toast.warning("Erro ao enviar pedido");
+      });
   };
 
   return (
@@ -49,8 +68,10 @@ export default function Orders() {
         <OrderLocation
           onChangeLocation={(location) => setOrderLocation(location)}
         />
-        <OrderSummary 
-        amount={selectedProducts.length} totalPrice={totalPrice}
+        <OrderSummary
+          amount={selectedProducts.length}
+          totalPrice={totalPrice}
+          onSubmit={handleSubmit}
         />
       </div>
       <Footer />
