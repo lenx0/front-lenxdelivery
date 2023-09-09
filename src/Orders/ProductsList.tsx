@@ -14,7 +14,7 @@ export default function ProductsList({ products, onSelectProduct, selectedProduc
       <div className="orders-list-items">
         {products.map((product) => (
           <ProductCard
-            key={product.id}
+            key={product._id}
             product={product}
             onSelectProduct={onSelectProduct}
             isSelected={checkIsSelected(selectedProducts, product)}

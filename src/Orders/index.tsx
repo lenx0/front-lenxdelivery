@@ -25,13 +25,13 @@ export default function Orders() {
         toast.warning("Erro ao listar produtos");
       });
   }, []);
-
+  console.log(products)
   const handleSelectProduct = (product: Product) => {
     const isAlreadySelected = checkIsSelected(selectedProducts, product);
 
     if (isAlreadySelected) {
       const selected = selectedProducts.filter(
-        (item) => item.id !== product.id
+        (item) => item._id !== product._id
       );
       setSelectedProducts(selected);
     } else {
@@ -40,7 +40,7 @@ export default function Orders() {
   };
 
   const handleSubmit = () => {
-    const productsIds = selectedProducts.map(({ id }) => ({ id }));
+    const productsIds = selectedProducts.map(({ _id }) => ({ _id }));
     const payload = {
       ...orderLocation!,
       products: productsIds,
@@ -48,7 +48,7 @@ export default function Orders() {
 
     saveOrder(payload)
       .then((response) => {
-        toast.error(`Pedido enviado com sucesso! Nº${response.data.id}`);
+        toast.error(`Pedido enviado com sucesso! Nº${response.data._id}`);
         setSelectedProducts([]);
       })
       .catch(() => {
