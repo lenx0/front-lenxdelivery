@@ -1,5 +1,5 @@
 export type Product = {
-  _id: number;
+  _id: string;
   name: string;
   price: number;
   description: string;
@@ -13,7 +13,7 @@ export type OrderLocationData = {
 };
 
 type ProductId = {
-  _id: number;
+  _id: string;
 };
 
 export type OrderPayload = {
