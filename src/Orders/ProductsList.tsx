@@ -1,22 +1,14 @@
-import { useState } from "react"
 import ProductCard from "./ProductCard"
+import { checkIsSelected } from "./helpers";
 import { Product } from "./types"
 
 type Props = {
-  products: Product[]
-}
+  products: Product[];
+  onSelectProduct: (product: Product) => void;
+  selectedProducts: Product[];
+};
 
-export default function ProductsList({ products }: Props) {
-  const [selectedProducts, setSelectedProducts] = useState<Product[]>([])
-
-  const handleProductSelection = (product: Product) => {
-    if (selectedProducts.includes(product)) {
-      setSelectedProducts(selectedProducts.filter(p => p !== product))
-    } else {
-      setSelectedProducts([...selectedProducts, product])
-    }
-  }
-
+export default function ProductsList({ products, onSelectProduct, selectedProducts }: Props) {
   return (
     <div className="orders-list-container">
       <div className="orders-list-items">
@@ -24,8 +16,8 @@ export default function ProductsList({ products }: Props) {
           <ProductCard
             key={product.code}
             product={product}
-            isSelected={selectedProducts.includes(product)}
-            onSelect={() => handleProductSelection(product)}
+            onSelectProduct={onSelectProduct}
+            isSelected={checkIsSelected(selectedProducts, product)}
           />
         ))}
       </div>

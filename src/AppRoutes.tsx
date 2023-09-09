@@ -12,7 +12,6 @@ export default function AppRoutes() {
         <Route path="/orders" element={<Orders />} />
         <Route path="/" element={<Home />} />
       </Routes>
-      <Footer />
     </BrowserRouter>
   );
 }
