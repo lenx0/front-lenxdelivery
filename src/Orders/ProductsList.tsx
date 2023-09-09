@@ -17,8 +17,6 @@ export default function ProductsList({ products }: Props) {
     }
   }
 
-  console.log("selectedProducts: ", selectedProducts)
-
   return (
     <div className="orders-list-container">
       <div className="orders-list-items">
