@@ -1,5 +1,5 @@
 export type Product = {
-  code: number;
+  id: number;
   name: string;
   price: number;
   description: string;
@@ -12,10 +12,10 @@ export type OrderLocationData = {
   address: string;
 };
 
-type ProductCode = {
-  code: number;
+type ProductId = {
+  id: number;
 };
 
 export type OrderPayload = {
-  products: ProductCode[];
+  products: ProductId[];
 } & OrderLocationData;

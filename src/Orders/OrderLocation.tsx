@@ -50,7 +50,7 @@ export default function OrderLocation({ onChangeLocation }: Props) {
     onChangeLocation({
       latitude: place.position.lat,
       longitude: place.position.lng,
-      address: place.label!
+      address: place.label!,
     });
   };
 

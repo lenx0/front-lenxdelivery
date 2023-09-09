@@ -31,7 +31,7 @@ export default function Orders() {
 
     if (isAlreadySelected) {
       const selected = selectedProducts.filter(
-        (item) => item.code !== product.code
+        (item) => item.id !== product.id
       );
       setSelectedProducts(selected);
     } else {
@@ -40,7 +40,7 @@ export default function Orders() {
   };
 
   const handleSubmit = () => {
-    const productsIds = selectedProducts.map(({ code }) => ({ code }));
+    const productsIds = selectedProducts.map(({ id }) => ({ id }));
     const payload = {
       ...orderLocation!,
       products: productsIds,
@@ -48,7 +48,7 @@ export default function Orders() {
 
     saveOrder(payload)
       .then((response) => {
-        toast.error(`Pedido enviado com sucesso! Nº${response.data.code}`);
+        toast.error(`Pedido enviado com sucesso! Nº${response.data.id}`);
         setSelectedProducts([]);
       })
       .catch(() => {
