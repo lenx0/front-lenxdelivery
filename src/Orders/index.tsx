@@ -12,6 +12,7 @@ import { checkIsSelected } from "./helpers";
 
 export default function Orders() {
   const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(false);
   const [selectedProducts, setSelectedProducts] = useState<Product[]>([]);
   const [orderLocation, setOrderLocation] = useState<OrderLocationData>();
   const totalPrice = selectedProducts.reduce((sum, item) => {
@@ -19,13 +20,16 @@ export default function Orders() {
   }, 0);
 
   useEffect(() => {
+    setLoading(true);
     fetchProducts()
       .then((response) => setProducts(response.data))
       .catch(() => {
         toast.warning("Erro ao listar produtos");
-      });
+      })
+      .finally(() => setLoading(false));
   }, []);
-  console.log(products)
+  
+  console.log(products);
   const handleSelectProduct = (product: Product) => {
     const isAlreadySelected = checkIsSelected(selectedProducts, product);
 
@@ -64,6 +68,7 @@ export default function Orders() {
           products={products}
           onSelectProduct={handleSelectProduct}
           selectedProducts={selectedProducts}
+          loading={loading}
         />
         <OrderLocation
           onChangeLocation={(location) => setOrderLocation(location)}
