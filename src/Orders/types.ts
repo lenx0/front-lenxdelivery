@@ -12,10 +12,6 @@ export type OrderLocationData = {
   address: string;
 };
 
-type ProductId = {
-  _id: string;
-};
-
 export type OrderPayload = {
-  products: ProductId[];
+  products: Product[];
 } & OrderLocationData;
