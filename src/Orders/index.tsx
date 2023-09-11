@@ -43,11 +43,24 @@ export default function Orders() {
     }
   };
 
+  // const handleSubmit = () => {
+  //   const productsIds = selectedProducts.map(({ _id }) => ({ _id }));
+  //   const payload = {
+  //     ...orderLocation!,
+  //     products: productsIds,
+  //   };
+
   const handleSubmit = () => {
-    const productsIds = selectedProducts.map(({ _id }) => ({ _id }));
+    const productsData = selectedProducts.map(({ _id, name, price, description }) => ({
+      _id,
+      name,
+      price,
+      description,
+    }));
+    
     const payload = {
       ...orderLocation!,
-      products: productsIds,
+      products: productsData,
     };
 
     saveOrder(payload)
