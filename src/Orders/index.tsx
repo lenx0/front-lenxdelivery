@@ -62,6 +62,7 @@ export default function Orders() {
     const payload = {
       ...orderLocation!,
       products: productsData,
+      totalPrice: totalPrice,
     };
 
     saveOrder(payload)
