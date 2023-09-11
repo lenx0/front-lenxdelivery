@@ -51,11 +51,12 @@ export default function Orders() {
   //   };
 
   const handleSubmit = () => {
-    const productsData = selectedProducts.map(({ _id, name, price, description }) => ({
+    const productsData = selectedProducts.map(({ _id, name, price, description, imageUri }) => ({
       _id,
       name,
       price,
       description,
+      imageUri,
     }));
     
     const payload = {
