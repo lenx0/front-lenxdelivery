@@ -4,7 +4,7 @@ export type Product = {
   price: number;
   description: string;
   imageUri: string;
-  totalPrice: number;
+  
 };
 
 export type OrderLocationData = {
@@ -15,4 +15,5 @@ export type OrderLocationData = {
 
 export type OrderPayload = {
   products: Product[];
+  totalPrice: number;
 } & OrderLocationData;
