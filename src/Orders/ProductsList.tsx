@@ -1,36 +1,42 @@
-import { useState } from "react"
-import ProductCard from "./ProductCard"
-import { Product } from "./types"
+import ProductCard from "./ProductCard";
+import { checkIsSelected } from "./helpers";
+import { Product } from "./types";
+import { Skeleton } from "@mui/material";
 
 type Props = {
-  products: Product[]
-}
+  products: Product[];
+  onSelectProduct: (product: Product) => void;
+  selectedProducts: Product[];
+  loading: boolean;
+};
 
-export default function ProductsList({ products }: Props) {
-  const [selectedProducts, setSelectedProducts] = useState<Product[]>([])
-
-  const handleProductSelection = (product: Product) => {
-    if (selectedProducts.includes(product)) {
-      setSelectedProducts(selectedProducts.filter(p => p !== product))
-    } else {
-      setSelectedProducts([...selectedProducts, product])
-    }
-  }
-
-  console.log("selectedProducts: ", selectedProducts)
-
+export default function ProductsList({
+  products,
+  onSelectProduct,
+  selectedProducts,
+  loading,
+}: Props) {
   return (
     <div className="orders-list-container">
       <div className="orders-list-items">
-        {products.map((product) => (
-          <ProductCard
-            key={product.code}
-            product={product}
-            isSelected={selectedProducts.includes(product)}
-            onSelect={() => handleProductSelection(product)}
-          />
-        ))}
+        {loading
+          ? Array.from({ length: 6 }).map((_, index) => (
+              <div key={index} className="product-card-container">
+                <Skeleton variant="rectangular" width={230} height={318} />
+                <Skeleton width="60%" />
+                <Skeleton width="80%" />
+                <Skeleton width="40%" />
+              </div>
+            ))
+          : products.map((product) => (
+              <ProductCard
+                key={product._id}
+                product={product}
+                onSelectProduct={onSelectProduct}
+                isSelected={checkIsSelected(selectedProducts, product)}
+              />
+            ))}
       </div>
     </div>
-  )
+  );
 }

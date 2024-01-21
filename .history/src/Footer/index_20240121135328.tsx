@@ -1,6 +1,6 @@
 import "./styles.css";
-import instagram from "../Components/images/instagram.png";
-import linkedin from "../Components/images/linkedin.png";
+import instagram from "./instagram.png";
+import linkedin from "./linkedin.png";
 
 export default function Footer() {
   return (
