@@ -17,15 +17,3 @@
     color: #FFFFFF;
     margin-left: 15px;
 }
-
-@media only screen and (max-width: 768px) {
-    .main-navbar {
-        justify-content: center;
-    }
-}
-
-@media only screen and (max-width: 499px) {
-    .main-navbar {
-        justify-content: center;
-    }
-}

@@ -1,6 +1,6 @@
 .home-container {
   padding-top: 100px;
-  height: calc(100vh - 269px);
+  height: calc(100vh - 254px);
 }
 
 .home-container h1 {
@@ -54,7 +54,7 @@
   width: 100% !important;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1000px) {
   .home-container {
     height: auto;
     width: auto;
@@ -156,14 +156,12 @@
 
   .home-image img{
     text-align: center;
-    width: 80%;
+    width: 70%;
   }
 
   .home-title {
-    font-weight: bold;
-    font-size: 40px;
+    font-size: 35px;
     line-height: 48px;
-    margin-bottom: 10px !important;
   }
 
   .home-subtitle {
@@ -176,18 +174,4 @@
     align-items: center;
   }
   
-}
-
-@media only screen and (max-width: 499px) {
-  .home-title {
-    font-weight: bold;
-    font-size: 40px;
-    text-align: center;
-    line-height: 48px;
-    margin: 0 3px 10px 3px !important;
-  }
-
-  .home-subtitle {
-    margin: 0 3px 30px 3px !important;
-  }
 }

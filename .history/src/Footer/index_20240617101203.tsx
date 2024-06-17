@@ -5,7 +5,7 @@ import linkedin from "./linkedin.png";
 export default function Footer() {
   return (
     <footer className="main-footer">
-      Developed by Thiago Beraldo
+      Siga-me nas redes
       <div className="footer-icons">
         <a href="https://www.instagram.com/thiagoberaldo_" target="_new">
           <img src={instagram} />
