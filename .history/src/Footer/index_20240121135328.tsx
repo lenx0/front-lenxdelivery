@@ -1,11 +1,11 @@
 import "./styles.css";
-import instagram from "../Components/images/instagram.png";
-import linkedin from "../Components/images/linkedin.png";
+import instagram from "./instagram.png";
+import linkedin from "./linkedin.png";
 
 export default function Footer() {
   return (
     <footer className="main-footer">
-      Developed by Thiago Beraldo
+      App desenvolvido por Thiago de Freitas Beraldo
       <div className="footer-icons">
         <a href="https://www.instagram.com/thiagoberaldo_" target="_new">
           <img src={instagram} />

@@ -292,15 +292,3 @@
       width: 100%;
     }
   }
-
-  @media only screen and (max-width: 709px) {
-
-    .orders-list-items {
-      width: 50%;
-      display: flex;
-      margin-top: 20px;
-      flex-direction: column;
-      grid-template-columns: repeat(auto-fill, 235px);
-      justify-content: space-between;
-    }
-  }

@@ -293,7 +293,10 @@
     }
   }
 
-  @media only screen and (max-width: 709px) {
+  @media only screen and (max-width: 600px) {
+    .orders-list-container {
+      background-color: red;
+    }
 
     .orders-list-items {
       width: 50%;
